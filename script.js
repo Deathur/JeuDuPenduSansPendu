@@ -1,4 +1,6 @@
-
+/**
+ * Variable de vérification pour ne prendre que des touches de l'alphabet
+ */
 let regmotADeviner = /^[a-z]+$/i;
 let regpropositionLettre = /^[^a-zA-Z]+$/;
 let regWhiteSpace = /^s+$/;
@@ -26,7 +28,9 @@ let barreDeVie = document.querySelector(".border2");
 let modeDifficile = document.querySelector(".modedifficile");
 let divPropose = document.querySelector(".div-propose");
 let infoMode = document.querySelector(".infoMode");
-
+/**
+ * Evenement permettant d'afficher ou de cacher les lettres déjà proposés (pour plus de challenge)
+ */
 modeDifficile.addEventListener("click", () => {
   if (modeDifficile.innerText == "Passer en mode difficile") {
     divPropose.style.display = "none";
@@ -36,6 +40,28 @@ modeDifficile.addEventListener("click", () => {
     modeDifficile.innerText = "Passer en mode difficile";
   }
 });
+/**
+ * Evenement permettant de désafficher la popup de fin de partie qui annonce si c'est perdu ou gagné
+ */
+boutonPopup.addEventListener("click", () => {
+  popup.style.display = "none";
+});
+
+document.addEventListener("keypress", (event) => {
+  if (event.key == "Enter") {
+    popup.style.display = "none";
+    verification();
+  }
+});
+/**
+ * Evenement permettant de commencer la partie en cliquant sur le bouton pour commencer la partie
+ */
+boutonCommencer.addEventListener("click", commencerJeu);
+/**
+ * 
+ * @returns {void}
+ * Fonction permettant d'initialiser le jeu en demandant au joueur un mot en plus de vérifier si le mot ne contient que des lettres de l'alphabet seulement 
+ */
 function commencerJeu() {
   if (enJeu == false) {
     pourcentageVie.innerText = "100%";
@@ -72,7 +98,10 @@ function commencerJeu() {
     return;
   }
 }
-
+/**
+ * Fonction permettant de Vérifier la valeur entrée par la personne, si la valeur est valide selon le Regex, elle est alors comparé à chaque lettre du mot pour vérifier si elle est bien dedans. Elle appelle la fonction "fauxPerdu()" afin de dire si c'est une erreur et "conditionVictoire()" pour voir si les lettres ont tous étaient trouvés.
+ * @returns {void}
+ */
 function verification() {
   if (enJeu == true) {
     propositionLettre = document
@@ -108,6 +137,9 @@ function verification() {
     return;
   }
 }
+/**
+ * Fonction permettant de compter les erreurs et la condition de défaite. Elle appelle la fonction "MaVie()" afin d'afficher la vie restante
+ */
 function fauxPerdu() {
   if (errorVerify == false || dejaPropose == true) {
     errorCount += 1;
@@ -124,6 +156,9 @@ function fauxPerdu() {
     inputLetter.disabled = true;
   }
 }
+/**
+ * Fonction permettant de vérifier la condition de victoire, elle est appelé à chaque proposition dans la fonction "verification()"
+ */
 function conditionVictoire() {
   if (tabADeviner.toString() == tabComplet.toString()) {
     textPopup.innerText = "Vous avez gagné !";
@@ -136,6 +171,9 @@ function conditionVictoire() {
     infoMode.style.visibility = "visible";
   }
 }
+/**
+ * Fonction permettant d'actualiser la barre de vie
+ */
 function maVie() {
   console.log(errorCount);
   switch (errorCount) {
@@ -187,15 +225,3 @@ function maVie() {
       break;
   }
 }
-
-boutonPopup.addEventListener("click", () => {
-  popup.style.display = "none";
-});
-
-document.addEventListener("keypress", (event) => {
-  if (event.key == "Enter") {
-    popup.style.display = "none";
-    verification();
-  }
-});
-boutonCommencer.addEventListener("click", commencerJeu);
