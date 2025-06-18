@@ -107,9 +107,7 @@ function commencerJeu() {
  */
 function verification() {
   if (enJeu == true) {
-    propositionLettre = document
-      .querySelector(".inputLetter")
-      .value.toUpperCase();
+    propositionLettre = inputLetter.value.toUpperCase();
     if (regpropositionLettre.test(propositionLettre)) {
       inputLetter.value = "";
       alert("Veuillez entrer une lettre entre A et Z !");
@@ -136,7 +134,7 @@ function verification() {
     conditionVictoire();
     errorVerify = false;
     dejaPropose = false;
-    document.querySelector(".inputLetter").value = "";
+    inputLetter.value = "";
     afficherLettrePropose.textContent = lettreDejaPropose.join(" ");
     afficherError.innerText = errorCount;
     return;
@@ -179,7 +177,7 @@ function conditionVictoire() {
   }
 }
 /**
- * Fonction permettant d'actualiser la barre de vie
+ * Fonction permettant d'actualiser la barre de vie et de changer de couleur selon le pourcentage restant
  * 
  */
 function maVie() {
