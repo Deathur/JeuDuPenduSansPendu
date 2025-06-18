@@ -1,21 +1,22 @@
 # Nom du projet
+**Le jeu du pendu (sans pendu car Youtube Friendly)**
 Le principe est celui du jeu du pendu... mais sans pendu car c'est cruel. Du coup on a changé pour un nombre d'erreur seulement.
 
 # Objectif du projet
 C'est un jeu qui se joue à 2 ou plus, une personne mets un mot correpondant à une suite de lettres sans accent (pas besoin de savoir si le mot existe), et c'est à 1 ou plusieurs autres joueurs de deviner le mot avant de perdre toute sa vie, ce qui correspond à 10 erreurs. Le principe est d'avoir autant de rejouabilité que l'imagination des personnes, en plus d'accepter la majorité des mots sans accent.
 
 # Découpage du projet
-**Mot aléatoire**: Choix du joueur qui deviendra un tableau avec chaque lettre
+**Mot aléatoire**: Choix du joueur qui deviendra un tableau avec chaque lettre.
 
-**Commencer une partie**: Bouton
+**Commencer une partie**: Bouton s'affichant ou se cachant selon l'état du jeu.
 
-**Cacher les lettres**: Création d'un second tableau avec des "_" au lieu des lettres
+**Cacher les lettres**: Création d'un second tableau avec des "_" au lieu des lettres.
 
-**Compter les erreurs/Défaites**: condition + incrémentation de valeurs pour les erreurs -> défaite si trop d'erreur
+**Compter les erreurs/Défaites**: condition + incrémentation de valeurs pour les erreurs -> défaite si trop d'erreur.
 
-**Vérifier les entrées**: Comparaison du tableau de chaque lettres + compter les répétitions
+**Vérifier les entrées**: Comparaison du tableau de chaque lettres + compter les répétitions.
 
-**Victoire**: Voir si le tableau final est résolu
+**Victoire**: Voir si le tableau final est résolu.
 
 # Fonctions principales
 **Fonction "commencerJeu()"** -> on demande à un joueur, un nom à mettre en prompt afin de créer le mot contenu (il doit respecter la norme de ce qu'on demande, à savoir ne contenir que de l'alphabet). Le mot peut être écrit en minuscule ou non car dans tout les cas, le programme transforme le mot en majuscule pour plus de lisibilité. Le bouton se désafiche durant la partie, et se réaffiche avec le texte "Recommencer à jouer" après une victoire ou une défaite, permettant de rejouer.

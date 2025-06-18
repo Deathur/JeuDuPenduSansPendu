@@ -1,10 +1,12 @@
 /**
- * Variable de vérification pour ne prendre que des touches de l'alphabet
+ * Variable de Regex  pour vérifier la composition du mot ou de la lettre proposé
  */
 let regmotADeviner = /^[a-z]+$/i;
 let regpropositionLettre = /^[^a-zA-Z]+$/;
 let regWhiteSpace = /^s+$/;
-
+/**
+ * Variable d'initialisation pour les fonctions ou pour pointer des éléments du HTML afin de changer le contenu
+ */
 let motADeviner;
 let tabADeviner;
 let longueur;
