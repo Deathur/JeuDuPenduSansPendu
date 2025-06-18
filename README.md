@@ -1,5 +1,6 @@
 # Nom du projet
 **Le jeu du pendu (sans pendu car Youtube Friendly)**
+
 Le principe est celui du jeu du pendu... mais sans pendu car c'est cruel. Du coup on a changé pour un nombre d'erreur seulement.
 
 # Objectif du projet
