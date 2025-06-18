@@ -11,14 +11,15 @@ let motADeviner;
 let tabADeviner;
 let longueur;
 let tabComplet;
-let enJeu = false;
 let propositionLettre;
 let errorCount = 0;
-let errorVerify = false;
-let afficherMotDeviner = document.querySelector(".MotDeviner");
 let lettreDejaPropose = [];
-let afficherLettrePropose = document.querySelector(".lettrePropose");
+let enJeu = false;
+let errorVerify = false;
 let dejaPropose = false;
+//Selecteur d'élément HTML
+let afficherMotDeviner = document.querySelector(".MotDeviner");
+let afficherLettrePropose = document.querySelector(".lettrePropose");
 let afficherError = document.querySelector(".error");
 let boutonCommencer = document.querySelector(".StartGame");
 let pourcentageVie = document.querySelector(".pourcentagevie");
@@ -43,7 +44,7 @@ modeDifficile.addEventListener("click", () => {
   }
 });
 /**
- * Evenement permettant de désafficher la popup de fin de partie qui annonce si c'est perdu ou gagné
+ * Evenement permettant de désafficher la popup de fin de partie qui annonce si c'est perdu ou gagné grâce à la touche Entrée
  */
 boutonPopup.addEventListener("click", () => {
   popup.style.display = "none";
