@@ -6,10 +6,15 @@ C'est un jeu qui se joue à 2 ou plus, une personne mets un mot correpondant à 
 
 # Découpage du projet
 **Mot aléatoire**: Choix du joueur qui deviendra un tableau avec chaque lettre
+
 **Commencer une partie**: Bouton
+
 **Cacher les lettres**: Création d'un second tableau avec des "_" au lieu des lettres
+
 **Compter les erreurs/Défaites**: condition + incrémentation de valeurs pour les erreurs -> défaite si trop d'erreur
+
 **Vérifier les entrées**: Comparaison du tableau de chaque lettres + compter les répétitions
+
 **Victoire**: Voir si le tableau final est résolu
 
 # Fonctions principales
