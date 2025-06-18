@@ -69,6 +69,7 @@ function commencerJeu() {
   if (enJeu == false) {
     pourcentageVie.innerText = "100%";
     motADeviner = prompt("Choisissez un mot à deviner").toUpperCase();
+    //Véfification de la conformité du mot à deviner
     if (
       motADeviner == null ||
       !regmotADeviner.test(motADeviner) ||
@@ -100,7 +101,7 @@ function commencerJeu() {
   }
 }
 /**
- * Fonction permettant de Vérifier la valeur entrée par la personne, si la valeur est valide selon le Regex, elle est alors comparé à chaque lettre du mot pour vérifier si elle est bien dedans. Elle appelle la fonction "fauxPerdu()" afin de dire si c'est une erreur et "conditionVictoire()" pour voir si les lettres ont tous étaient trouvés.
+ * Fonction permettant de Vérifier la valeur entrée par la personne, si la valeur est valide selon le Regex, elle est alors comparé à chaque lettre du mot pour vérifier si elle est bien dedans. Elle appelle la fonction "fauxPerdu()" afin de d'afficher l'erreur ou la défaite, et "conditionVictoire()" pour voir si les lettres ont tous étaient trouvés.
  * @returns {void}
  */
 function verification() {
