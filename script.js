@@ -61,9 +61,9 @@ document.addEventListener("keypress", (event) => {
 boutonCommencer.addEventListener("click", commencerJeu);
 /**
  * 
- * @returns {void}
  * Fonction permettant d'initialiser le jeu en demandant au joueur un mot en plus de vérifier si le mot ne contient que des lettres de l'alphabet seulement 
- */
+ * @returns {void}
+*/
 function commencerJeu() {
   if (enJeu == false) {
     pourcentageVie.innerText = "100%";
@@ -141,6 +141,7 @@ function verification() {
 }
 /**
  * Fonction permettant de compter les erreurs et la condition de défaite. Elle appelle la fonction "MaVie()" afin d'afficher la vie restante
+ * 
  */
 function fauxPerdu() {
   if (errorVerify == false || dejaPropose == true) {
@@ -160,6 +161,7 @@ function fauxPerdu() {
 }
 /**
  * Fonction permettant de vérifier la condition de victoire, elle est appelé à chaque proposition dans la fonction "verification()"
+ * 
  */
 function conditionVictoire() {
   if (tabADeviner.toString() == tabComplet.toString()) {
@@ -175,6 +177,7 @@ function conditionVictoire() {
 }
 /**
  * Fonction permettant d'actualiser la barre de vie
+ * 
  */
 function maVie() {
   console.log(errorCount);

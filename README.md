@@ -5,6 +5,9 @@ Le principe est celui du jeu du pendu... mais sans pendu car c'est cruel. Du cou
 # Objectif du projet
 C'est un jeu qui se joue à 2 ou plus, une personne mets un mot correpondant à une suite de lettres sans accent (pas besoin de savoir si le mot existe), et c'est à 1 ou plusieurs autres joueurs de deviner le mot avant de perdre toute sa vie, ce qui correspond à 10 erreurs. Le principe est d'avoir autant de rejouabilité que l'imagination des personnes, en plus d'accepter la majorité des mots sans accent.
 
+# Règle du jeu
+Le joueur choisis un mot à deviner (il faut que ce soit une suite de lettre de l'alphabet latin, sans accent et aussi, il ne peut pas mettre rien du tout). Puis le second joueur pourra taper la lettre qu'il veut et appuyer sur la touche Entrée, et ca vérifiera si la touche est valide (**Attention: Ne rien mettre en tant que proposition est considéré comme une erreur, de même pour le fait de remettre la même lettre déjà proposé**). Le jeu se finit soit dans le cas où le mot est trouvé en entier, soit dans le cas où la personne fait 10 erreurs. En cas de défaite, le mot à deviner sera affichéguerre
+
 # Découpage du projet
 **Mot aléatoire**: Choix du joueur qui deviendra un tableau avec chaque lettre.
 
@@ -25,6 +28,6 @@ C'est un jeu qui se joue à 2 ou plus, une personne mets un mot correpondant à 
 
 **Fonction "FauxPerdu()"** -> On vérifie si il y a eu une erreur OU si la lettre est déjà proposé (ou même si la personne n'a rien mis comme proposition), elle incrémente le compteur d'erreur et fait appelle à la fonction "MaVie()" en plus d'afficher la valeur d'erreur à l'écran. Si c'est perdu, on affiche une popup nous disant qu'on a perdu, et nous donnant le mot à deviner.
 
-**Fonction "victoire()"** -> On vérifie si les tableaux sont exacts, pour cela on retransforme les "tableaux" en "string" car on ne peut pas faire de comparaison avec un tableau, étant donné que la comparaison des tableau ne cible que l'espace mémoire affecté et non sa valeur. Si c'est égale, alors on mets une popup qui nous dit qu'on a gagné.
+**Fonction "conditionVictoire()"** -> On vérifie si les tableaux sont exacts, pour cela on retransforme les "tableaux" en "string" car on ne peut pas faire de comparaison avec un tableau, étant donné que la comparaison des tableau ne cible que l'espace mémoire affecté et non sa valeur. Si c'est égale, alors on mets une popup qui nous dit qu'on a gagné.
 
 **Fonction "MaVie()"** -> Cette fonction permet de changer l'affichage de la barre de vie selon les erreurs, elle descend de 10% en 10% étant donné qu'on a considéré qu'on avait maximum 10 erreurs. J'ai fait en sorte qu'à 50% de la barre de vie elle devient jaune, et à 20% de la barre de vie, elle devient rouge.
