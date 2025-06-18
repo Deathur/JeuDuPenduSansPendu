@@ -115,6 +115,7 @@ function verification() {
       alert("Veuillez entrer une lettre entre A et Z !");
       return;
     }
+    //Vérification de la lettre dans le mot
     for (i = 0; i < tabADeviner.length; i++) {
       if (tabADeviner[i] == propositionLettre) {
         tabComplet[i] = propositionLettre;
@@ -122,6 +123,7 @@ function verification() {
         afficherMotDeviner.textContent = tabComplet.join(" ");
       }
     }
+    //Vérification du cas pour mettre la lettre dans le tableau des lettres déjà proposé
     for (i = 0; i < lettreDejaPropose.length; i++) {
       if (lettreDejaPropose[i] == propositionLettre) {
         dejaPropose = true;
