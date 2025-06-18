@@ -87,9 +87,7 @@ function commencerJeu() {
     enJeu = true;
     document.querySelector(".inputLetter").value = "";
     console.log("Game start !");
-    tabComplet = new Array(longueur).fill("_");
     lettreDejaPropose = [];
-    document.querySelector(".inputLetter").value = "";
     afficherLettrePropose.textContent = " ";
     errorCount = 0;
     afficherError.innerText = errorCount;
